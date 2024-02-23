@@ -32,7 +32,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/fg-loadcss/dist/cssrelpreload.min.js"
+            ]
           },
           "configurations": {
             "production": {
