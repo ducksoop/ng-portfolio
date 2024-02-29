@@ -27,24 +27,16 @@ export class ContactComponent {
 
   onSubmit(): void {
     if (!this.validateEmail(this.email)) {
-      this.email = '';
+      this.email = 'INAVLID';
     } else if (this.name && this.email && this.message) {
       this.sendMessage();
+    } else {
+      alert('Please fill in all fields');
     }
   }
 
   sendMessage(): void {
-    const name = this.name.trim();
-    const email = this.email.trim();
-    const message = this.message.trim();
-
-    const params = {
-      name,
-      email,
-      message,
-    };
-
-    this.emailService.sendEmail(params);
+    this.emailService.sendEmail(this.params);
 
     alert('Your message has been sent!');
 
@@ -63,5 +55,14 @@ export class ContactComponent {
     const re =
       /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+  }
+
+  get params(): Record<string, unknown> {
+    return {
+      name: this.name.trim().split(/\s+/).join(' '),
+      email: this.email.trim(),
+      message: this.message.trim().split(/\s+/).join(' '),
+      contact_number: (Math.random() * 100000) | 0,
+    };
   }
 }

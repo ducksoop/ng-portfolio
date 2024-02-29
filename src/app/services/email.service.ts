@@ -10,6 +10,10 @@ export class EmailService {
   templateId = 'contact_form';
   userId = 'dRvzaAp8aTa8BxGA1';
 
+  constructor() {
+    emailjs.init(this.userId);
+  }
+
   sendEmail(params: Record<string, unknown>): void {
     emailjs.send(this.serviceId, this.templateId, params).then(
       (res) => {
