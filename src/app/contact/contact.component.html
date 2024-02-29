@@ -34,7 +34,7 @@
     />
     <ng-container *ngIf="emailControl.invalid && emailControl.touched">
       <small *ngIf="emailControl.errors?.['required']">
-        You must enter your email
+        Please enter your email
       </small>
       <small *ngIf="emailControl.errors?.['pattern']">
         Please enter a valid email
@@ -58,11 +58,12 @@
     </ng-container>
     <div
       class="button send"
-      (click)="onSubmit()"
+      (click)="onSubmit(contactForm)"
       [ngClass]="{ disabled: contactForm.invalid }"
     >
       <span class="icon is-small"><i class="fa fa-envelope"></i></span>
       Send Message
     </div>
   </form>
+  <app-snack-bar [snackBar]="snackBar"></app-snack-bar>
 </div>

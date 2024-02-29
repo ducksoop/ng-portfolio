@@ -9,6 +9,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule } from '@angular/forms';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     EducationComponent,
     HomePageComponent,
     NavbarComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,

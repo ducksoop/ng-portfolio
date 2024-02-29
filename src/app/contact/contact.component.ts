@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DocumentService } from '../services/document.service';
 import { Router } from '@angular/router';
 import { EmailService } from '../services/email.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -15,6 +16,8 @@ export class ContactComponent {
   email: string = '';
   message: string = '';
 
+  public snackBar = { show: false, text: '' };
+
   constructor(
     private router: Router,
     private emailService: EmailService,
@@ -25,29 +28,20 @@ export class ContactComponent {
     this.documentService.updateTitle(this.title);
   }
 
-  onSubmit(): void {
+  onSubmit(form: NgForm): void {
     if (!this.validateEmail(this.email)) {
       this.email = 'INAVLID';
     } else if (this.name && this.email && this.message) {
       this.sendMessage();
+      form.reset();
     } else {
-      alert('Please fill in all fields');
+      this.showSnackBar('Please fill in all the fields');
     }
   }
 
   sendMessage(): void {
     this.emailService.sendEmail(this.params);
-
-    alert('Your message has been sent!');
-
-    this.reloadComponent();
-  }
-
-  reloadComponent(): void {
-    // A hacky solution for realoading the component
-    this.router.navigate(['/']).then((nav) => {
-      this.router.navigate(['/', 'contact']);
-    });
+    this.showSnackBar('Your message has been sent.');
   }
 
   validateEmail(email: string): boolean {
@@ -57,11 +51,22 @@ export class ContactComponent {
     return re.test(String(email).toLowerCase());
   }
 
+  showSnackBar(text: string) {
+    this.snackBar = {
+      show: true,
+      text,
+    };
+
+    setTimeout(() => {
+      this.snackBar.show = false;
+    }, 10000);
+  }
+
   get params(): Record<string, unknown> {
     return {
-      name: this.name.trim().split(/\s+/).join(' '),
+      name: this.name.trim(),
       email: this.email.trim(),
-      message: this.message.trim().split(/\s+/).join(' '),
+      message: this.message.trim(),
       contact_number: (Math.random() * 100000) | 0,
     };
   }
