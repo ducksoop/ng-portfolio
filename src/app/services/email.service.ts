@@ -6,14 +6,14 @@ import emailjs from 'emailjs-com';
   providedIn: 'root',
 })
 export class EmailService {
-  constructor() {
-    emailjs.init('dRvzaAp8aTa8BxGA1');
-  }
+  serviceId = 'service_sctkkia';
+  templateId = 'contact_form';
+  userId = 'dRvzaAp8aTa8BxGA1';
 
-  sendEmail(params: Record<string, unknown> | undefined): void {
-    emailjs.send('service_sctkkia', 'contact_form', params).then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
+  sendEmail(params: Record<string, unknown>): void {
+    emailjs.send(this.serviceId, this.templateId, params).then(
+      (res) => {
+        console.log('SUCCESS!', res.status, res.text);
       },
       (error) => {
         console.log('FAILED...', error);
