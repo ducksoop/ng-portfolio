@@ -19,7 +19,6 @@ export class ContactComponent {
   public snackBar = { show: false, text: '' };
 
   constructor(
-    private router: Router,
     private emailService: EmailService,
     private documentService: DocumentService
   ) {}
@@ -30,7 +29,7 @@ export class ContactComponent {
 
   onSubmit(form: NgForm): void {
     if (!this.validateEmail(this.email)) {
-      this.email = 'INAVLID';
+      this.email = ' '; // show an invalid email error on the form
     } else if (this.name && this.email && this.message) {
       this.sendMessage();
       form.reset();
