@@ -14,14 +14,7 @@ export class EmailService {
     emailjs.init(this.userId);
   }
 
-  sendEmail(params: Record<string, unknown>): void {
-    emailjs.send(this.serviceId, this.templateId, params).then(
-      (res) => {
-        console.log('SUCCESS!', res.status, res.text);
-      },
-      (error) => {
-        console.log('FAILED...', error);
-      }
-    );
+  sendEmail(params: Record<string, unknown>) {
+    return emailjs.send(this.serviceId, this.templateId, params)
   }
 }

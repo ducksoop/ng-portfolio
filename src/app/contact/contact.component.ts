@@ -31,16 +31,31 @@ export class ContactComponent {
     if (!this.validateEmail(this.email)) {
       this.email = ' '; // show an invalid email error on the form
     } else if (this.name && this.email && this.message) {
-      this.sendMessage();
-      form.reset();
+      this.sendEmail(this.params, form);
     } else {
-      this.showSnackBar('Please fill in all the fields');
+      this.showSnackBar('Missing value(s). Message not sent');
     }
   }
 
-  sendMessage(): void {
-    this.emailService.sendEmail(this.params);
-    this.showSnackBar('Your message has been sent.');
+  sendEmail(params: Record<string, unknown>, form: NgForm): void {
+    form.reset();
+
+    this.emailService.sendEmail(params).then(
+      (res) => {
+        this.showSnackBar('Your message has been sent');
+        console.log('SUCCESS!', res.status, res.text);
+      },
+      (error) => {
+        // Repopulate the form: good user experience
+        form.setValue({
+          name: params['name'],
+          email: params['email'],
+          message: params['message'],
+        });
+        this.showSnackBar('Error, message not sent');
+        console.log('FAILED...', error);
+      }
+    );
   }
 
   validateEmail(email: string): boolean {
