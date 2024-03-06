@@ -2,14 +2,15 @@
 
 .home-top-container {
   padding-top: 130px;
-  width: 100vw;
   vertical-align: top;
   text-align: center;
-  padding-left: 30px;
 }
 
-.home-top-container h2 {
-  text-align: right;
+.home-top-container h1 {
+  text-align: center;
+  padding-top: 50px;
+  color: rgb(38, 119, 180);
+  padding-right: 50px;
 }
 
 .home-top-left {
@@ -21,7 +22,6 @@
 .home-top-left-image img {
   border: 1px solid rgba(128, 128, 128, 0.205);
   width: 80%;
-  height: 90%;
   border-radius: 5px;
   background-size: cover;
   vertical-align: top;

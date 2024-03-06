@@ -42,20 +42,22 @@ h2 {
 
   .home-top-left-image {
     text-align: center !important;
-    padding-right: 55px;
   }
-  .home-top-right h2 {
+  .home-top-right h1 {
     text-align: center !important;
+    font-size:  30px;
+    padding-left: 50px;
+    margin-top: -45px;
   }
-
-  .home-top-right {
-    position: relative;
-    bottom: 40px;
+ 
+  .home-top-right ul li {
+    padding-left: 30px;
   }
-
+  
   .home-bottom-text {
+    width: 150px;
     position: relative;
-    bottom: 100px;
+    bottom: 60px;
   }
 }
 @media screen and (max-width: 540px) {
