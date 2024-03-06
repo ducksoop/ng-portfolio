@@ -12,47 +12,6 @@
   text-align: center;
 }
 
-.project {
-  padding: 10px 0;
-  border-radius: 2px;
-  margin: 20px 0 20px 0;
-}
-.project h3 {
-  font-size: 1.4em;
-  margin: 5px 0 10px;
-}
-.project-image {
-  text-align: center;
-  margin: 10px 0 10px 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.project-image img {
-  width: 100%;
-  border-radius: 2px;
-  margin-top: 5px;
-}
-.project-text p {
-  margin-bottom: 10px;
-}
-.project-button {
-  border-radius: 2px;
-  padding: 10px 20px;
-  display: inline-block;
-  margin: 0px 10px 5px 0px;
-  color: rgb(44, 44, 44);
-  font-size: 0.8em;
-  font-weight: 600;
-  background-color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.project-button:hover {
-  background: #313131;
-  color: white;
-}
-.dark .project-button:hover {
-  background-color: rgb(199, 199, 199);
-  color: black;
-}
 .project-tags {
   margin-bottom: 5px;
 }
@@ -65,104 +24,104 @@
   border: 1px solid black;
 }
 .tag-html {
-  border-color: #E54D26;
+  border-color: #e54d26;
   color: black;
 }
 .tag-css {
-  border-color: #0070BA;
+  border-color: #0070ba;
   color: black;
 }
 .tag-bootstrap {
-  border-color: #824ECF;
-  color: #824ECF;
+  border-color: #824ecf;
+  color: #824ecf;
 }
 .tag-js {
-  border-color: #F5E01F;
+  border-color: #f5e01f;
   color: black;
 }
 .tag-reactjs {
-  border-color: #61DAFB;
+  border-color: #61dafb;
   color: black;
 }
 .tag-nodejs {
-  border-color: #90C53F;
-  color: #90C53F;
+  border-color: #90c53f;
+  color: #90c53f;
 }
 .tag-winforms {
   border-color: grey;
   color: grey;
 }
 .tag-csharp {
-  border-color: #7A3396;
-  color: #7A3396;
+  border-color: #7a3396;
+  color: #7a3396;
 }
 .tag-sharppcap {
   border-color: rgb(56, 56, 56);
   color: rgb(56, 56, 56);
 }
 .tag-semanticui {
-  border-color: #35BDB2;
-  color: #35BDB2;
+  border-color: #35bdb2;
+  color: #35bdb2;
 }
 .tag-electron {
-  border-color: #437C86;
-  color: #437C86;
+  border-color: #437c86;
+  color: #437c86;
 }
 .tag-discordjs {
-  border-color: #8C9EFF;
-  color: #8C9EFF;
+  border-color: #8c9eff;
+  color: #8c9eff;
 }
 .tag-json {
   border-color: black;
   color: black;
 }
 .tag-mysql {
-  border-color: #00618A;
-  color: #00618A;
+  border-color: #00618a;
+  color: #00618a;
 }
 .tag-php {
-  border-color: #777BB3;
-  color: #777BB3;
+  border-color: #777bb3;
+  color: #777bb3;
 }
 .tag-scss {
-  border-color: #CF649A;
-  color: #CF649A;
+  border-color: #cf649a;
+  color: #cf649a;
 }
 .tag-vue {
-  border-color: #42B783;
-  color: #42B783;
+  border-color: #42b783;
+  color: #42b783;
 }
 .tag-firebase {
-  border-color: #FFCA2C;
+  border-color: #ffca2c;
   color: black;
 }
 .tag-yelp {
-  border-color: #D32323;
-  color: #D32323;
+  border-color: #d32323;
+  color: #d32323;
 }
 .tag-algolia-places {
-  border-color: #3A5395;
-  color: #3A5395;
+  border-color: #3a5395;
+  color: #3a5395;
 }
 .tag-laravel {
-  border-color: #E74430;
-  color: #E74430;
+  border-color: #e74430;
+  color: #e74430;
 }
 .tag-wordpress {
-  border-color: #1B749E;
-  color: #1B749E;
+  border-color: #1b749e;
+  color: #1b749e;
 }
 .tag-asgard {
-  border-color: #E89980;
-  color: #E89980;
+  border-color: #e89980;
+  color: #e89980;
 }
 .tag-react {
-  border-color: #61DAFB;
-  color: #61DAFB;
+  border-color: #61dafb;
+  color: #61dafb;
 }
 .tag-ruby-on-rails {
-  border-color: #CC0000;
-  color: #CC0000;
+  border-color: #cc0000;
+  color: #cc0000;
 }
 .tag-sqlite {
   border-color: #044a64;
@@ -170,11 +129,11 @@
 }
 .tag-netlify {
   border-color: orange;
-  color:  black;
+  color: black;
 }
 
 .tag-idb {
-  border-color: #7A3396;
+  border-color: #7a3396;
   color: black;
 }
 
@@ -184,6 +143,6 @@
 }
 
 .tag-angular {
-  border-color: #D32323;
+  border-color: #d32323;
   color: black;
 }

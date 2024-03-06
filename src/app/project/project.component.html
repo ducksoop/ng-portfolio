@@ -1,0 +1,33 @@
+<div class="project">
+  <div class="project-image">
+    <img [src]="image" [alt]="title" />
+  </div>
+
+  <div class="project-text">
+    <h3>{{ title }}</h3>
+    <p>
+      {{ explanation }}
+    </p>
+  </div>
+
+  <ng-content></ng-content>
+
+  <div class="project-links">
+    <a
+      class="project-button"
+      [href]="appLink"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <span class="fa fa-link"></span> View Website
+    </a>
+    <a
+      class="project-button"
+      [href]="githubLink"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <span class="fab fa-github"></span> View Code
+    </a>
+  </div>
+</div>
